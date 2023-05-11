@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "../Countries.scss";
 import heart from "../assets/Vector.png";
 import cross from "../assets/croix.png";
@@ -60,7 +60,7 @@ function Countries() {
 
   useEffect(() => {
     fetch(
-      `https://pixabay.com/api/?key=36297898-b3d4c1f11383451076d6cde52&q=${randomCountry}+tourism&image_type=photo&per_page=5`
+      `https://pixabay.com/api/?key=36297898-b3d4c1f11383451076d6cde52&q=${randomCountry}+travel&image_type=photo&per_page=5`
     )
       .then((response) => response.json())
       .then((response) => {
@@ -73,10 +73,18 @@ function Countries() {
     setRandomCountry(countries[randomIndex]?.name?.common);
   }, [countries.length]);
 
+  const divRef = useRef(null);
+
+  useEffect(() => {
+    setTimeout(() => {
+      divRef.current.scrollLeft = 0;
+    }, 300);
+  }, [randomIndex]);
+
   return (
     <div className="countries-container">
       <h2>Match or Pass</h2>
-      <div className="country-card">
+      <div className="country-card" ref={divRef}>
         {pictures.map((e) => (
           <img src={e.webformatURL} alt="" key={e.id} />
         ))}

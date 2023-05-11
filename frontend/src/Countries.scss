@@ -14,6 +14,7 @@ $font-family_1: "Poppins", sans-serif;
         font-weight: 700;
         font-size: 40px;
         line-height: 48px;
+        margin-bottom: 48px;
     }
     p {
         font-style: normal;
@@ -64,5 +65,29 @@ $font-family_1: "Poppins", sans-serif;
         justify-content: center;
         align-items: center;
     }
+}
+a {
+    all: unset;
+}
+button {
+    all: unset;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 10px;
+    width: 103px;
+    height: 30px;
+    background: #539DF3;
+    border-radius: 100px;
+    color: white;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
 }
 }
