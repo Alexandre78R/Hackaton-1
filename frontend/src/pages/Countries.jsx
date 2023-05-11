@@ -12,7 +12,8 @@ function Countries() {
   const [randomIndex, setRandomIndex] = useState();
 
   const handleclick = () => {
-    localStorage.setItem("selectedCountry", selectedCountry);
+    console.log("selectedCountry", selectedCountry);
+    localStorage.setItem("selectedCountry", JSON.stringify(selectedCountry));
   };
 
   const handlePass = () => {
@@ -24,7 +25,10 @@ function Countries() {
   };
 
   const handleMatch = () => {
-    setSelectedCountry([...selectedCountry, randomCountry]);
+    setSelectedCountry([
+      ...selectedCountry,
+      { name: randomCountry, img: pictures },
+    ]);
     setRandomIndex(Math.floor(Math.random() * countries.length));
     countries.splice(randomIndex, 1);
     setRandomCountry(countries[randomIndex]?.name.common);
