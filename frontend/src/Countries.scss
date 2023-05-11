@@ -1,3 +1,9 @@
+@import "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap";
+$font-family_1: "Poppins", sans-serif;
+
+* {
+    font-family: $font-family_1;
+}
 .countries-container {
     display: flex;
     flex-direction: column;
@@ -19,13 +25,21 @@
 .country-card {
     display: flex;
     flex-direction: row;
-    overflow-y: scroll;
+    overflow-x: scroll;
     width: 90%;
+    scroll-snap-type: x mandatory;
+    border-radius: 16px;
+    scroll-behavior: smooth;
+
+
+
     img{
     width: 300px;
     height: 470px;
-    margin: 16px;
+    margin-right: 16px;
     border-radius: 15px;
+    scroll-snap-align: center;
+
     }
 }
 .btn-match {
