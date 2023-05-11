@@ -29,7 +29,7 @@ function Region() {
     <div>
       <div className="titleregion">
         <h2>Let's start !</h2>
-        <h5>Fin your happiness with us</h5>
+        <h5>Find your happiness with us</h5>
       </div>
       <div className="containerRegion">
         <div className="container1">
@@ -46,8 +46,8 @@ function Region() {
                 border:
                   selectedRegions.find((name) => name.region === "Europe") !==
                   undefined
-                    ? "1px solid red"
-                    : "1px solid ",
+                    ? "1px solid "
+                    : "",
               }}
             />
             <h3>Europe</h3>
@@ -65,7 +65,7 @@ function Region() {
                 border:
                   selectedRegions.find((name) => name.region === "Asia") !==
                   undefined
-                    ? "red"
+                    ? "1px solid "
                     : "",
               }}
             />
@@ -85,7 +85,7 @@ function Region() {
                 border:
                   selectedRegions.find((name) => name.region === "Oceania") !==
                   undefined
-                    ? "red"
+                    ? "1px solid "
                     : "",
               }}
             />
@@ -93,20 +93,16 @@ function Region() {
           </button>
         </div>
         <div className="container1">
-          <button
-            className="africa"
-            type="button"
-            onClick={() => handleClickTheme("Africa")}
-          >
+          <button type="button" onClick={() => handleClickTheme("Africa")}>
             <img
               src={africa}
-              alt=""
+              alt="africa"
               className="regionImg"
               style={{
                 border:
                   selectedRegions.find((name) => name.region === "Africa") !==
                   undefined
-                    ? "red"
+                    ? "1px solid "
                     : "",
               }}
             />
@@ -119,10 +115,10 @@ function Region() {
               alt="america"
               className="regionImg"
               style={{
-                background:
+                border:
                   selectedRegions.find((name) => name.region === "America") !==
                   undefined
-                    ? "red"
+                    ? "1px solid "
                     : "",
               }}
             />
