@@ -1,8 +1,12 @@
 import "./App.css";
+import Countries from "./pages/Countries";
 
 function App() {
-
-  return <></>;
+  return (
+    <>
+      <Countries />
+    </>
+  );
 }
 
 export default App;
