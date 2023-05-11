@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from "react";
 
 function ListCountries() {
-  // const [img, setImg] = useState("");
-  // const [name, setName] = useState("");
   const [tabCountrie, setTabCountrie] = useState([]);
   useEffect(() => {
     const data = localStorage.getItem("selectedCountry");
     const jsonData = JSON.parse(data);
     console.log("jsonData", jsonData);
     setTabCountrie(jsonData);
-    //   setImg(jsonData.img[0]);
-    //   setName(jsonData.name);
   }, []);
 
   return (

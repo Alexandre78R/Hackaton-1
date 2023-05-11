@@ -1,7 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useEffect } from "react-router-dom";
 import "../Home.scss";
 
 function Home() {
+  useEffect(() => {
+    localStorage.setItem("isSelectCountrieMatch", JSON.stringify(false));
+  }, []);
+
   return (
     <div>
       <h1>

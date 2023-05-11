@@ -23,6 +23,10 @@ function Region() {
     localStorage.setItem("region", JSON.stringify(selectedRegions));
   };
 
+  useEffect(() => {
+    localStorage.setItem("isSelectCountrieMatch", JSON.stringify(false));
+  }, []);
+
   return (
     <div>
       <button
