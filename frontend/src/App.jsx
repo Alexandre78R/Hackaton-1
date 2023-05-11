@@ -1,7 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import "./App.css";
 import "./listCountries.css";
-
 import Countries from "./pages/Countries";
 import Home from "./pages/Home";
 import Region from "./pages/Region";

@@ -1,5 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "../Region.scss";
+import africa from "../assets/africa.jpg";
+import oceania from "../assets/oceania.jpg";
+import america from "../assets/america.jpg";
+import asia from "../assets/asia.jpg";
+import europe from "../assets/europe.jpg";
+
 
 function Region() {
   const [selectedRegions, setSelectedRegions] = useState([]);
@@ -25,79 +32,111 @@ function Region() {
 
   return (
     <div>
-      <button
-        type="button"
-        onClick={() => handleClickTheme("Europe")}
-        style={{
-          backgroundColor:
-            selectedRegions.find((name) => name.region === "Europe") !==
-            undefined
-              ? "Red"
-              : "gray",
-        }}
-      >
-        Europe
-      </button>
-      <button
-        type="button"
-        onClick={() => handleClickTheme("Asia")}
-        style={{
-          backgroundColor:
-            selectedRegions.find((name) => name.region === "Asia") !== undefined
-              ? "Red"
-              : "gray",
-        }}
-      >
-        Asia
-      </button>
-      <button
-        type="button"
-        onClick={() => handleClickTheme("Oceania")}
-        style={{
-          backgroundColor:
-            selectedRegions.find((name) => name.region === "Oceania") !==
-            undefined
-              ? "Red"
-              : "gray",
-        }}
-      >
-        Oceania
-      </button>
-      <button
-        type="button"
-        onClick={() => handleClickTheme("Africa")}
-        style={{
-          backgroundColor:
-            selectedRegions.find((name) => name.region === "Africa") !==
-            undefined
-              ? "Red"
-              : "gray",
-        }}
-      >
-        Africa
-      </button>
-      <button
-        type="button"
-        onClick={() => handleClickTheme("America")}
-        style={{
-          backgroundColor:
-            selectedRegions.find((name) => name.region === "America") !==
-            undefined
-              ? "Red"
-              : "gray",
-        }}
-      >
-        America
-      </button>
-      <p>Sélection : </p>
-      {selectedRegions.map((region) => {
-        return <h1 key={region.region}> {region.region}</h1>;
-      })}
-      <Link to="/countries">
-        <button type="button" onClick={handleclick}>
-          Start
-        </button>
-      </Link>
+      <div className="titleregion">
+        <h2>Let's start !</h2>
+        <h5>Find your happiness with us</h5>
+      </div>
+      <div className="containerRegion">
+        <div className="container1">
+          <button
+            className="europe"
+            type="button"
+            onClick={() => handleClickTheme("Europe")}
+          >
+            <img
+              src={europe}
+              alt="europe"
+              className="regionImg"
+              style={{
+                border:
+                  selectedRegions.find((name) => name.region === "Europe") !==
+                  undefined
+                    ? "1px solid "
+                    : "",
+              }}
+            />
+            <h3>Europe</h3>
+          </button>
+          <button
+            className="asia"
+            type="button"
+            onClick={() => handleClickTheme("Asia")}
+          >
+            <img
+              src={asia}
+              alt="asia"
+              className="regionImg"
+              style={{
+                border:
+                  selectedRegions.find((name) => name.region === "Asia") !==
+                  undefined
+                    ? "1px solid "
+                    : "",
+              }}
+            />
+            <h3>Asia</h3>
+          </button>
+
+          <button
+            className="oceania"
+            type="button"
+            onClick={() => handleClickTheme("Oceania")}
+          >
+            <img
+              src={oceania}
+              alt="oceania"
+              className="regionImg"
+              style={{
+                border:
+                  selectedRegions.find((name) => name.region === "Oceania") !==
+                  undefined
+                    ? "1px solid "
+                    : "",
+              }}
+            />
+            <h3>Oceania</h3>
+          </button>
+        </div>
+        <div className="container1">
+          <button type="button" onClick={() => handleClickTheme("Africa")}>
+            <img
+              src={africa}
+              alt="africa"
+              className="regionImg"
+              style={{
+                border:
+                  selectedRegions.find((name) => name.region === "Africa") !==
+                  undefined
+                    ? "1px solid "
+                    : "",
+              }}
+            />
+            <h3>Africa</h3>
+          </button>
+
+          <button type="button" onClick={() => handleClickTheme("America")}>
+            <img
+              src={america}
+              alt="america"
+              className="regionImg"
+              style={{
+                border:
+                  selectedRegions.find((name) => name.region === "America") !==
+                  undefined
+                    ? "1px solid "
+                    : "",
+              }}
+            />
+            <h3>America</h3>
+          </button>
+        </div>
+
+        <Link to="/Countries">
+          <button type="button" className="ExploreBtn">
+            Explore
+          </button>
+        </Link>
+      </div>
     </div>
   );
 }
