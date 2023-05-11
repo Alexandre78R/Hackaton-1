@@ -60,7 +60,7 @@ function Countries() {
 
   useEffect(() => {
     fetch(
-      `https://pixabay.com/api/?key=36297898-b3d4c1f11383451076d6cde52&q=${randomCountry}+travel&image_type=photo&per_page=5`
+      `https://pixabay.com/api/?key=36297898-b3d4c1f11383451076d6cde52&q=${randomCountry}&image_type=photo&per_page=5`
     )
       .then((response) => response.json())
       .then((response) => {
@@ -86,7 +86,10 @@ function Countries() {
       <h2>Match or Pass</h2>
       <div className="country-card" ref={divRef}>
         {pictures.map((e) => (
-          <img src={e.webformatURL} alt="" key={e.id} />
+          <div
+            style={{ backgroundImage: `url(${e.webformatURL})` }}
+            key={e.id}
+          />
         ))}
       </div>
       <p>{randomCountry}</p>
@@ -94,15 +97,15 @@ function Countries() {
         <div className="pass" onClick={handlePass}>
           <img src={cross} alt="" />
         </div>
+        <Link to="/listCountries">
+          <button type="button" onClick={handleclick}>
+            Next
+          </button>
+        </Link>
         <div className="match" onClick={handleMatch}>
           <img src={heart} alt="" />
         </div>
       </div>
-      <Link to="/listCountries">
-        <button type="button" onClick={handleclick}>
-          Start
-        </button>
-      </Link>
     </div>
   );
 }

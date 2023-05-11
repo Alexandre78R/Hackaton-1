@@ -15,11 +15,9 @@ function Home() {
           cristallines.{" "}
         </p>
       </div>
-      <button type="button">
+      <button className="start" type="button">
         <Link to="/region">Start</Link>
       </button>
-
-     
     </div>
   );
 }
