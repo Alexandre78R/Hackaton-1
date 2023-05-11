@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Region() {
   const [selectedRegions, setSelectedRegions] = useState([]);
@@ -17,6 +18,10 @@ function Region() {
   useEffect(() => {
     console.info("selectedRegions", selectedRegions);
   }, [selectedRegions]);
+
+  const handleclick = () => {
+    localStorage.setItem("region", JSON.stringify(selectedRegions));
+  };
 
   return (
     <div>
@@ -88,6 +93,11 @@ function Region() {
       {selectedRegions.map((region) => {
         return <h1 key={region.region}> {region.region}</h1>;
       })}
+      <Link to="/countries">
+        <button type="button" onClick={handleclick}>
+          Start
+        </button>
+      </Link>
     </div>
   );
 }
