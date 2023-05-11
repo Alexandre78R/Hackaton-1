@@ -7,6 +7,7 @@ import america from "../assets/america.jpg";
 import asia from "../assets/asia.jpg";
 import europe from "../assets/europe.jpg";
 
+
 function Region() {
   const [selectedRegions, setSelectedRegions] = useState([]);
 
@@ -24,6 +25,10 @@ function Region() {
   useEffect(() => {
     console.info("selectedRegions", selectedRegions);
   }, [selectedRegions]);
+
+  const handleclick = () => {
+    localStorage.setItem("region", JSON.stringify(selectedRegions));
+  };
 
   return (
     <div>
