@@ -23,63 +23,69 @@ function Region() {
       <button
         type="button"
         onClick={() => handleClickTheme("Europe")}
-        // color (class name)
-        // className={
-        //   selectedRegions.find((name) => name.region === "europe") !== undefined
-        // }
-        // className={
-        //     selectedRegions.find((name) => name.region === "europe") !== undefined
-        //   }
+        style={{
+          backgroundColor:
+            selectedRegions.find((name) => name.region === "Europe") !==
+            undefined
+              ? "Red"
+              : "gray",
+        }}
       >
         Europe
       </button>
       <button
         type="button"
         onClick={() => handleClickTheme("Asia")}
-        // color (class name)
-        // buttonState={
-        //   selectedThemes.find((name) => name.apiName === "cocktail") !==
-        //   undefined
-        // }
+        style={{
+          backgroundColor:
+            selectedRegions.find((name) => name.region === "Asia") !== undefined
+              ? "Red"
+              : "gray",
+        }}
       >
         Asia
       </button>
       <button
         type="button"
         onClick={() => handleClickTheme("Oceania")}
-        // color (class name)
-        // buttonState={
-        //   selectedThemes.find((name) => name.apiName === "cocktail") !==
-        //   undefined
-        // }
+        style={{
+          backgroundColor:
+            selectedRegions.find((name) => name.region === "Oceania") !==
+            undefined
+              ? "Red"
+              : "gray",
+        }}
       >
         Oceania
       </button>
       <button
         type="button"
         onClick={() => handleClickTheme("Africa")}
-        // color (class name)
-        // buttonState={
-        //   selectedThemes.find((name) => name.apiName === "cocktail") !==
-        //   undefined
-        // }
+        style={{
+          backgroundColor:
+            selectedRegions.find((name) => name.region === "Africa") !==
+            undefined
+              ? "Red"
+              : "gray",
+        }}
       >
         Africa
       </button>
       <button
         type="button"
         onClick={() => handleClickTheme("America")}
-        // color (class name)
-        // buttonState={
-        //   selectedThemes.find((name) => name.apiName === "cocktail") !==
-        //   undefined
-        // }
+        style={{
+          backgroundColor:
+            selectedRegions.find((name) => name.region === "America") !==
+            undefined
+              ? "Red"
+              : "gray",
+        }}
       >
         America
       </button>
       <p>Sélection : </p>
       {selectedRegions.map((region) => {
-        // console.info("region", region);
         return <h1 key={region.region}> {region.region}</h1>;
       })}
     </div>
