@@ -75,7 +75,7 @@ function Countries() {
 
   return (
     <div className="countries-container">
-      <h2>Match or pass</h2>
+      <h2>Match or Pass</h2>
       <div className="country-card">
         {pictures.map((e) => (
           <img src={e.webformatURL} alt="" key={e.id} />
@@ -90,7 +90,7 @@ function Countries() {
           <img src={heart} alt="" />
         </div>
       </div>
-      <Link to="/countries">
+      <Link to="/listCountries">
         <button type="button" onClick={handleclick}>
           Start
         </button>
