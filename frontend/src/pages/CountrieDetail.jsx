@@ -36,9 +36,11 @@ function CountrieDetail() {
       <img src={img} alt="" className="imgfav" />
       <div className="activities">
         <p>Activités :</p>
-        {activite.split(/\n/g).map((e) => {
-          return <p>{e}</p>;
-        })}
+        {activite === ""
+          ? "Searching for the best activities in this area..."
+          : activite.split(/\n/g).map((e) => {
+              return <p>{e}</p>;
+            })}
       </div>
     </div>
   );

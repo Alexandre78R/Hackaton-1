@@ -44,7 +44,7 @@ function Countries() {
     countries.splice(randomIndex, 1);
     setRandomIndex(Math.floor(Math.random() * countries.length));
     setRandomCountry(countries[randomIndex]?.name.common);
-    console.log(randomCountry)
+    console.log(randomCountry);
   };
 
   const handleMatch = () => {
@@ -52,8 +52,8 @@ function Countries() {
       ...selectedCountry,
       { name: randomCountry, img: pictures },
     ]);
-    setRandomIndex(Math.floor(Math.random() * countries.length));
     countries.splice(randomIndex, 1);
+    setRandomIndex(Math.floor(Math.random() * countries.length));
     setRandomCountry(countries[randomIndex]?.name.common);
   };
 
@@ -125,6 +125,7 @@ function Countries() {
   }, []);
 
   useEffect(() => {
+    console.log("randomCountry", randomCountry);
     fetch(
       `https://pixabay.com/api/?key=36297898-b3d4c1f11383451076d6cde52&q=town+${randomCountry}&image_type=photo&per_page=5`
     )
