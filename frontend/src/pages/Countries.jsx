@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import "../Countries.scss";
 import heart from "../assets/Vector.png";
 import cross from "../assets/croix.png";
+import list from "../assets/list.png";
 import { Link } from "react-router-dom";
 
 function Countries() {
@@ -92,6 +93,33 @@ function Countries() {
         setCountries(jsonSauvDataCountry);
       }
     }, 300);
+
+    // const localRegion = localStorage.getItem("region");
+    // const dataLocal = JSON.parse(localRegion);
+    // console.warn(dataLocal);
+    // fetch(" https://restcountries.com/v3.1/all")
+    //   .then((response) => response.json())
+    //   .then((response) => {
+    //     const arr = [];
+    //     for (let i = 0; i < dataLocal.length; i++) {
+    //       const filterRegion = response.filter(
+    //         (e) =>
+    //           e.population >= 10000000 &&
+    //           e.continents[0].includes(dataLocal[i].region)
+    //       );
+    //       arr.push(filterRegion);
+    //     }
+    //     console.log("arr", arr);
+    //     const newArr = [];
+    //     for (let i = 0; i < arr.length; i++) {
+    //       for (let j = 0; j < arr[i].length; j++) {
+    //         newArr.push(arr[i][j]);
+    //       }
+    //     }
+    //     setRandomIndex(Math.floor(Math.random() * newArr.length));
+    //     setCountries(newArr);
+    //   })
+    //   .catch((err) => console.error(err));
   }, []);
 
   useEffect(() => {
@@ -133,12 +161,16 @@ function Countries() {
     <div className="countries-container">
       <h2>Match or Pass</h2>
       <div className="country-card" ref={divRef}>
-        {pictures.map((e) => (
-          <div
-            style={{ backgroundImage: `url(${e.webformatURL})` }}
-            key={e.id}
-          />
-        ))}
+        {Boolean(countries.length) ? (
+          pictures?.map((e) => (
+            <div
+              style={{ backgroundImage: `url(${e.webformatURL})` }}
+              key={e.id}
+            />
+          ))
+        ) : (
+          <p>Sorry, no more country available</p>
+        )}
       </div>
       <p>{randomCountry}</p>
       <div className="btn-match">
@@ -147,7 +179,7 @@ function Countries() {
         </div>
         <Link to="/listCountries">
           <button type="button" onClick={handleclick}>
-            Next
+            <img src={list} alt="" />
           </button>
         </Link>
         <div className="match" onClick={handleMatch}>
