@@ -7,7 +7,6 @@ import america from "../assets/america.jpg";
 import asia from "../assets/asia.jpg";
 import europe from "../assets/europe.jpg";
 
-
 function Region() {
   const [selectedRegions, setSelectedRegions] = useState([]);
 
@@ -132,8 +131,8 @@ function Region() {
         </div>
 
         <Link to="/Countries">
-          <button type="button" className="ExploreBtn">
-            Explore
+          <button type="button" className="ExploreBtn" onClick={handleclick}>
+            <p>Let's go</p>
           </button>
         </Link>
       </div>
