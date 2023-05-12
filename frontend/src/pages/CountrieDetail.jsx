@@ -27,9 +27,10 @@ function CountrieDetail() {
       })
     );
     // }
+    console.log("api", apiChatGPT.text(name));
   }, [name]);
   return (
-    <div>
+    <div className="details">
       <p>{name}</p>
     </div>
   );
