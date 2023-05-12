@@ -32,13 +32,6 @@ function ListCountries() {
           </Link>
         );
       })}
-      {/* <div className="favpictures">
-        <img src="../src/assets/photo1.jpg" alt="" width="80%" />
-        <p>
-          <img src="../src/assets/localisation.png" alt="" width="20px" />
-          Ville, PAYS
-        </p>
-      </div> */}
       <Link to="/countries">
         <div className="go-back">
           <img src={arrow} alt="" />
