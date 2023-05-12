@@ -1,7 +1,7 @@
 import { Configuration, OpenAIApi } from "openai";
 
 const configuration = new Configuration({
-  apiKey: "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",
+  apiKey: "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",
 });
 const openai = new OpenAIApi(configuration);
 
@@ -11,7 +11,7 @@ const api = async (pays) => {
     messages: [
       {
         role: "user",
-        content: `Donne moi 3  activité en liste à faire en  ${pays} , sans conclusion le tout écris en maximum de trois lignes.`,
+        content: `Give me a list of 3 activites to do in ${pays} , without a conclusion and in a total of 3 ligns.`,
       },
     ],
   });
