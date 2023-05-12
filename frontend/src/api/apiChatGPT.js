@@ -1,11 +1,12 @@
 import { Configuration, OpenAIApi } from "openai";
 
 const configuration = new Configuration({
-  apiKey: "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",
+  apiKey: "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",
 });
 const openai = new OpenAIApi(configuration);
 
 const api = async (pays) => {
+    console.log("pays", pays)
   const completion = await openai.createChatCompletion({
     model: "gpt-3.5-turbo",
     messages: [
