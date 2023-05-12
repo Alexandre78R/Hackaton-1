@@ -15,6 +15,7 @@ function CountrieDetail() {
   }, []);
 
   useEffect(() => {
+    console.info("name", name);
     const api = (name) => {
       return apiChatGPT(name);
     };
