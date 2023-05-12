@@ -4,8 +4,8 @@ import "../Home.scss";
 function Home() {
   return (
     <div>
-      <h1>
-        Wonder <br /> Match
+      <h1 className="home-title">
+       <span>Wonder</span><span>Match</span>
       </h1>
       <div className="imgHome">
         <p>

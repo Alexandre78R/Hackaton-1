@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import arrow from "../assets/arrow.png";
 
 function ListCountries() {
   // const [img, setImg] = useState("");
@@ -14,17 +16,14 @@ function ListCountries() {
   }, []);
 
   return (
-    <>
-      <h1>Your favourite </h1>
+    <div className="favourites">
+      <h1>Your favourites</h1>
       {tabCountrie.map((countrie) => {
         console.log("countrie", countrie);
         return (
           <div className="favpictures">
             <img src={countrie.img[0]?.largeImageURL} alt="" width="80%" />
-            <p>
-              <img src="../src/assets/localisation.png" alt="" width="20px" />
-              {countrie.name}
-            </p>
+            <p>{countrie.name}</p>
           </div>
         );
       })}
@@ -35,7 +34,12 @@ function ListCountries() {
           Ville, PAYS
         </p>
       </div> */}
-    </>
+      <Link to="/countries">
+        <div className="go-back">
+          <img src={arrow} alt="" />
+        </div>
+      </Link>
+    </div>
   );
 }
 

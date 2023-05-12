@@ -38,6 +38,7 @@ function Countries() {
   useEffect(() => {
     const localRegion = localStorage.getItem("region");
     const dataLocal = JSON.parse(localRegion);
+    console.warn(dataLocal);
     fetch(" https://restcountries.com/v3.1/all")
       .then((response) => response.json())
       .then((response) => {
@@ -46,7 +47,7 @@ function Countries() {
           const filterRegion = response.filter(
             (e) =>
               e.population >= 10000000 &&
-              e.continents[0] === dataLocal[i].region
+              e.continents[0].includes(dataLocal[i].region)
           );
           arr.push(filterRegion);
         }
