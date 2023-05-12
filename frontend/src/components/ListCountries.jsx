@@ -3,17 +3,17 @@ import { Link, useNavigate } from "react-router-dom";
 import arrow from "../assets/arrow.png";
 
 function ListCountries() {
-  // const [img, setImg] = useState("");
-  // const [name, setName] = useState("");
   const [tabCountrie, setTabCountrie] = useState([]);
   useEffect(() => {
     const data = localStorage.getItem("selectedCountry");
     const jsonData = JSON.parse(data);
     console.log("jsonData", jsonData);
     setTabCountrie(jsonData);
-    //   setImg(jsonData.img[0]);
-    //   setName(jsonData.name);
   }, []);
+
+  const handleclick = (countrie) => {
+    localStorage.setItem("countrieDetail", JSON.stringify(countrie));
+  };
 
   return (
     <div className="favourites">
@@ -21,10 +21,15 @@ function ListCountries() {
       {tabCountrie.map((countrie) => {
         console.log("countrie", countrie);
         return (
-          <div className="favpictures">
-            <img src={countrie.img[0]?.largeImageURL} alt="" width="80%" />
-            <p>{countrie.name}</p>
-          </div>
+          <Link to="/countrieDetail">
+            <div className="favpictures" onClick={() => handleclick(countrie)}>
+              <img src={countrie.img[0]?.largeImageURL} alt="" width="80%" />
+              <p>
+                {/* <img src="../src/assets/localisation.png" alt="" width="20px" /> */}
+                {countrie.name}
+              </p>
+            </div>
+          </Link>
         );
       })}
       {/* <div className="favpictures">

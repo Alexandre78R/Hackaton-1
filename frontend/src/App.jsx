@@ -5,6 +5,7 @@ import Countries from "./pages/Countries";
 import Home from "./pages/Home";
 import Region from "./pages/Region";
 import ListCountries from "./components/ListCountries";
+import CountrieDetail from "./pages/CountrieDetail";
 function App() {
   return (
     <div className="App">
@@ -13,6 +14,7 @@ function App() {
         <Route path="/region" element={<Region />} />
         <Route path="/countries" element={<Countries />} />
         <Route path="/listCountries" element={<ListCountries />} />
+        <Route path="/countrieDetail" element={<CountrieDetail />} />
       </Routes>
     </div>
   );
