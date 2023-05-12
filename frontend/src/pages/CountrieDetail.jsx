@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 function CountrieDetail() {
   const navigate = useNavigate();
   const [name, setname] = useState("");
+  const [activite, setActivite] = useState("");
 
   useEffect(() => {
     const data = localStorage.getItem("countrieDetail");
@@ -14,16 +15,13 @@ function CountrieDetail() {
   }, []);
 
   useEffect(() => {
-    // if (name === "") {
-    //   navigate("/");
-    // } else {
-    const api = async (name) => {
-      return await apiChatGPT.text(name);
+    const api = (name) => {
+      return apiChatGPT(name);
     };
-    // console.log("api", api(name));
     Promise.all(
       api(name).then((dataChatGPT) => {
         console.info("dataChatGPT", dataChatGPT.content);
+        setActivite(dataChatGPT.content);
       })
     );
     // }
@@ -31,6 +29,7 @@ function CountrieDetail() {
   return (
     <div>
       <p>{name}</p>
+      <p>{activite}</p>
     </div>
   );
 }
